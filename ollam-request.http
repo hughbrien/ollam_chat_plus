@@ -1,0 +1,92 @@
+###
+# curl http://localhost:11434/api/generate -d '{
+#  "model": "llama3.2",
+#  "prompt": "Why is the sky blue?"
+#
+POST http://localhost:11434/api/generate
+
+{
+  "model": "llama2",
+  "prompt": "Write me a simple Java program using LangChain that will interact with Ollama llama3. Also add the ability to parse the responses and capture  ",
+  "stream": true
+}
+
+
+###
+# curl http://localhost:11434/api/generate -d '{
+#  "model": "llama3.2",
+#  "prompt": "Why is the sky blue?"
+#
+POST http://localhost:11434/api/chat
+
+{
+  "model": "llama2",
+  "prompt": "Write me a simple Java program using LangChain that will interact with Ollama llama3. Also add the ability to parse the responses and capture  ",
+  "stream": false
+}
+
+###
+# curl http://localhost:11434/api/generate -d '{
+#  "model": "llama3.2",
+#  "prompt": "Why is the sky blue?"
+#
+POST http://localhost:11434/api/generate
+
+{
+  "model": "llama2",
+  "prompt": "Write me a simple Java program using LangChain that will interact with Ollama llama3 ",
+  "stream": false
+}
+
+###
+# curl http://localhost:11434/api/generate -d '{
+#  "model": "llama3.2",
+#  "prompt": "Why is the sky blue?"
+#
+POST http://localhost:11434/api/generate
+
+{
+  "model": "llama3",
+  "prompt": "Explain the concept of embeddings in a response from a request  Ollama running llama3",
+  "stream": false
+}
+
+
+###
+# Embeddings
+POST http://localhost:11434/api/embeddings
+Content-Type: application/json
+
+{
+  "model": "llama3",
+  "prompt": "Sample text"
+}
+
+###
+# curl -X POST http://localhost:11434/api/chat
+#  -H "Content-Type: application/json"
+#  -d '{
+#        "model": "llama3",
+#        "messages": [
+#           { "role": "user", "content": "Hello, how are you?" }
+#        ]
+#      }'
+
+
+POST http://localhost:11434/api/chat
+Content-Type: application/json
+
+{
+  "model": "llama3",
+  "stream": false,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Hello, how are you?"
+    }
+  ]
+}
+
+###
+
+
